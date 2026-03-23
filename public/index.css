@@ -1,0 +1,175 @@
+body {
+  font-family: "Inter", sans-serif;
+  background: #0f172a;
+  color: white;
+  margin: 0;
+}
+
+/* NAVBAR */
+
+.navbar {
+  background: #00070d;
+  padding: 15px;
+}
+
+.user-profile {
+  cursor: pointer;
+}
+
+.user-profile img {
+  width: 40px;
+  height: 40px;
+
+  border-radius: 50%;
+  object-fit: cover;
+
+  border: 2px solid #1da1f2;
+
+  transition: 0.3s;
+}
+
+.user-profile img:hover {
+  transform: scale(1.1);
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  cursor: pointer;
+}
+
+#navUserName {
+  color: white;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.user-profile img {
+  width: 38px;
+  height: 38px;
+
+  border-radius: 50%;
+  object-fit: cover;
+
+  border: 2px solid #1da1f2;
+
+  transition: 0.3s;
+}
+
+.user-profile img:hover {
+  transform: scale(1.1);
+}
+
+/* HEADER */
+
+.community-header {
+  padding: 120px 20px 60px;
+  background: #0f172a;
+  color: white;
+}
+
+.community-header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: white;
+}
+
+.community-header p {
+  color: #94a3b8;
+  margin-top: 10px;
+}
+
+/* CHAT ROOMS */
+
+.chat-rooms {
+  padding: 80px 0;
+
+  background: linear-gradient(rgba(15, 23, 42, 0.95), rgba(15, 23, 42, 0.95)),
+    url("https://images.unsplash.com/photo-1557804506-669a67965ba0");
+
+  background-size: cover;
+  background-position: center;
+}
+
+.room-card {
+  background: #0b1626;
+  padding: 35px;
+  border-radius: 16px;
+  text-align: center;
+  transition: all 0.3s ease;
+  height: 100%;
+  color: white;
+}
+
+.room-card h4 {
+  font-weight: 600;
+  color: white;
+}
+
+.room-card p {
+  color: #cbd5e1;
+  font-size: 0.95rem;
+}
+
+.room-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+.room-icon {
+  font-size: 40px;
+  color: #1da1f2;
+  margin-bottom: 15px;
+}
+
+/* BUTTON */
+
+.room-btn {
+  display: inline-block;
+  background: #1da1f2;
+  color: white !important;
+  padding: 10px 24px;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 15px rgba(29, 161, 242, 0.35);
+}
+
+.room-btn:hover {
+  background: #0d8ddb;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(29, 161, 242, 0.45);
+}
+
+/* FOOTER */
+
+.footer {
+  padding: 20px;
+  background: #0b1626;
+  color: #94a3b8;
+}
+
+.profile-card {
+  background: #0b1626;
+  color: white;
+  border-radius: 15px;
+}
+
+.profile-large {
+  width: 120px;
+  height: 120px;
+
+  border-radius: 50%;
+  margin-bottom: 15px;
+
+}
+
+.profile-card p {
+  color: #94a3b8;
+}
+
+

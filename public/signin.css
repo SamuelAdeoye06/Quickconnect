@@ -1,0 +1,229 @@
+* {
+  font-family: "Inter", sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+
+  /* 🔥 BRAND BLUE GRADIENT */
+  background: linear-gradient(
+      135deg,
+      #0b1626 0%,
+      #0f1f3d 40%,
+      #1da1f2 100%
+    );
+
+  background-attachment: fixed;
+}
+
+/* WRAPPER */
+
+.main-wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* CARD */
+
+.split-card {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  background: rgba(15, 23, 42, 0.75);
+
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+
+  overflow: hidden;
+  padding: 20px;
+
+  animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* LEFT SIDE */
+
+.brand-side {
+  padding: 35px;
+  color: white;
+}
+
+.brand-side h1 {
+  font-size: 38px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.brand-side p {
+  font-size: 14px;
+  opacity: 0.85;
+  line-height: 1.5;
+}
+
+/* RIGHT SIDE */
+
+.form-side {
+  padding: 35px;
+}
+
+.form-side h4 {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+/* INPUTS */
+
+.form-control {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: white;
+  border-radius: 10px;
+  padding: 10px 14px;
+  height: 42px;
+  font-size: 14px;
+}
+
+.form-control::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.form-control:focus {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: #1da1f2;
+  box-shadow: 0 0 0 2px rgba(29, 161, 242, 0.2);
+}
+
+/* PASSWORD ICON */
+
+.toggle-password {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+
+  color: #1da1f2;
+  font-size: 17px;
+}
+
+/* BUTTON */
+
+.btn-login {
+  background: linear-gradient(135deg, #1da1f2, #4facfe);
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  font-weight: 600;
+  font-size: 14px;
+
+  transition: 0.2s ease;
+}
+
+.btn-login:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(29, 161, 242, 0.3);
+}
+
+/* GOOGLE */
+
+.google-btn {
+  border-radius: 10px;
+  padding: 9px;
+  font-size: 14px;
+}
+
+.google-btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* LINKS */
+
+.signup-btn {
+  text-decoration: none;
+  font-weight: 600;
+  color: #4facfe;
+}
+
+.signup-btn:hover {
+  color: #1da1f2;
+}
+
+/* ========================= */
+/* 📱 MOBILE (<= 765px) */
+/* ========================= */
+
+@media (max-width: 765px) {
+  .brand-side {
+    display: none;
+  }
+
+  .split-card {
+    width: 100%;
+    /* max-width: 390px; */
+    margin: auto;
+    padding: 15px;
+    text-align: center;
+  }
+
+  .form-side {
+    padding: 20px;
+  }
+
+  .form-side h4 {
+    font-size: 18px;
+  }
+
+  .form-control {
+    font-size: 13px;
+    height: 38px;
+  }
+
+  .btn-login,
+  .google-btn {
+    font-size: 13px;
+    padding: 9px;
+  }
+}
+
+/* ========================= */
+/* 📱 SMALL PHONES (<= 400px) */
+/* ========================= */
+
+@media (max-width: 400px) {
+  .split-card {
+    max-width: 320px;
+  }
+
+  .form-side h4 {
+    font-size: 16px;
+  }
+
+  .form-control {
+    font-size: 12px;
+    height: 36px;
+  }
+
+  .btn-login,
+  .google-btn {
+    font-size: 12px;
+    padding: 8px;
+  }
+}
+
