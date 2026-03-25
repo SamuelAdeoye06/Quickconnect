@@ -24,12 +24,24 @@
       <div class="container">
         <a class="navbar-brand fw-bold" href="#">QuickConnect</a>
 
-        <div>
-          <!-- <div class="online-users" id="onlineUsers"></div> -->
-          <div id="profile" class="user-profile">
-            <span id="navUserName"></span>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navMenu"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-            <img src="" alt="profile" id="profilePic" />
+        <!-- Collapsible Menu -->
+        <div class="collapse navbar-collapse justify-content-end" id="navMenu">
+          <a href="index.html" class="btn btn-primary me-2">Communities</a>
+
+          <div>
+            <div id="profile" class="user-profile">
+              <span id="navUserName"></span>
+              <img src="" alt="profile" id="profilePic" />
+            </div>
           </div>
         </div>
       </div>
@@ -324,7 +336,7 @@
       sendBtn.addEventListener("click", sendMessage);
 
       function sendMessage() {
-        const text = messageInput.value.trim();
+        let text = messageInput.value.trim();
 
         if (text === "") return;
 
@@ -393,21 +405,40 @@
             <span class="delete-btn"><i class="bi bi-trash"></i></span>
           `;
 
-          messageDiv.innerHTML = `
-            <div class="msg-name">${msg.name}</div>
-            ${
-              msg.replyTo
-                ? `<div class="reply-box">
-                    <small>${msg.replyTo.name}</small>
-                    <div>${msg.replyTo.text}</div>
-                  </div>`
-                : ""
-            }
-            <div class="msg-text">${msg.text}</div>
-            <div class="msg-time">
-              ${formatTime(msg.timestamp)}
-              ${msg.edited ? " • edited" : ""}
-            </div>`;
+          const nameEl = document.createElement("div");
+          nameEl.className = "msg-name";
+          nameEl.textContent = msg.name;
+
+          const textEl = document.createElement("div");
+          textEl.className = "msg-text";
+          textEl.textContent = msg.text;
+
+          const timeEl = document.createElement("div");
+          timeEl.className = "msg-time";
+          timeEl.textContent = `${formatTime(msg.timestamp)}${
+            msg.edited ? " • edited" : ""
+          }`;
+
+          messageDiv.appendChild(nameEl);
+
+          if (msg.replyTo) {
+            const replyBox = document.createElement("div");
+            replyBox.className = "reply-box";
+
+            const replyName = document.createElement("small");
+            replyName.textContent = msg.replyTo.name;
+
+            const replyText = document.createElement("div");
+            replyText.textContent = msg.replyTo.text;
+
+            replyBox.appendChild(replyName);
+            replyBox.appendChild(replyText);
+
+            messageDiv.appendChild(replyBox);
+          }
+
+          messageDiv.appendChild(textEl);
+          messageDiv.appendChild(timeEl);
           messageDiv.appendChild(actions);
 
           messageDiv.addEventListener("click", (e) => {
@@ -528,7 +559,7 @@
 
       if (saveEditBtn) {
         saveEditBtn.addEventListener("click", () => {
-          const newText = document.getElementById("editMsgInput").value;
+          let newText = document.getElementById("editMsgInput").value;
 
           if (!newText.trim() || !messageToEdit) return;
 
